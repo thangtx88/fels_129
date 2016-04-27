@@ -19,3 +19,21 @@ en:
       submit: "Creat my account"
     static_pages:
       welcome: "Welcome to Framgia E-learning system"
+    session:
+      error: "Invalid email/password"
+      success: "Log in successfully"
+    login:
+      login: "Log in"
+      email: "Email"
+      password: "Password"
+      new_user: "New user?"
+  user:
+    account: "Account"
+    profile: "Profile"
+    setting: "Setting"
+    logout: "Logout"
+  layouts:
+    home: "Home"
+    login: "Login"
+    users: "Users"
+    account: "Account"
