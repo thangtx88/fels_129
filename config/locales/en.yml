@@ -1,5 +1,21 @@
 en:
-  hello: "Hello world"
-  singup: "Sign up now"  
+  error: "Error"
+  home: "Home"
+  form: "The form contains"
+
+  singup: "Sign up now"
   basetitle: "E-Learning system"
   app: "home"
+  createacc: "Create my account"
+  views:
+    signup:
+      signup: "Signup"
+      signup_now: "Sign up now!"
+      success: "Signup successfully"
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Password_confirmation"
+      submit: "Creat my account"
+    static_pages:
+      welcome: "Welcome to Framgia E-learning system"

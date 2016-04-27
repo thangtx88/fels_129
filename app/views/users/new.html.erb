@@ -1,0 +1,30 @@
+<% provide :title, t("views.signup.signup")  %>
+<div class = "row">
+  <div class= "col-md-6 col-md-offset-3 panel panel-default">
+    <h1><%= t "views.signup.signup" %></h1><br>
+    <%= form_for @user do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+      <p>
+        <%= f.label :name, t("views.signup.name") %>
+        <%= f.text_field :name, class: "form-control" %>
+      </p>
+      <p>
+        <%= f.label :email, t("views.signup.email") %>
+        <%= f.email_field :email, class: "form-control" %>
+      </p>
+      <p>
+        <%= f.label :password, t("views.signup.password") %>
+        <%= f.password_field :password, class: "form-control" %>
+      </p>
+      <p>
+        <%= f.label :password_confirmation,
+          t("views.signup.password_confirmation") %>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+      </p>
+      <p>
+        <%= f.submit t("views.signup.submit"),
+          class: "btn btn-default col-md-3" %>
+      </p>
+    <% end %>
+  </div>
+</div>
