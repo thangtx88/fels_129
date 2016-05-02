@@ -27,6 +27,11 @@ en:
       email: "Email"
       password: "Password"
       new_user: "New user?"
+    update:
+      update: "Update"
+      save_change: "Save change"
+      success: "Profile updated"
+      error: "Error update"
   user:
     account: "Account"
     profile: "Profile"
@@ -37,3 +42,4 @@ en:
     login: "Login"
     users: "Users"
     account: "Account"
+

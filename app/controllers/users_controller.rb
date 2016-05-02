@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :find_user, only: [:show, :edit, :update]
   def new
     @user = User.new
   end
@@ -13,6 +14,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = t "views.update.success"
+      redirect_to @user
+    else
+      flash[:danger] = t "views.update.error"
+      render :edit
+    end
+  end
+
+  def edit
+  end
+
   def show
     @user = User.find params[:id]
   end
@@ -21,5 +35,9 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit :name, :email, :password,
       :password_confirmation
+  end
+
+  def find_user
+    @user = User.find params[:id]
   end
 end
