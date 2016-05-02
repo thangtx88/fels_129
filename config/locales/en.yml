@@ -2,12 +2,40 @@ en:
   error: "Error"
   home: "Home"
   form: "The form contains"
-
   singup: "Sign up now"
   basetitle: "E-Learning system"
   app: "home"
-  createacc: "Create my account"
+  admin:
+    flash:
+      deleted_success: "Deleted success"
+      deleted_fail: "Deleted failed"
+      user_cannot: "Cannot user"
+      permission: "you are not admin"
+      created_success: "Created successfully"
+      created_fail: "Create failed"
+      edited_success: "Edited successfully"
+      edited_fail: "Edit failed"
+    category:
+      new: "New category"
+      content: "content"
+      create: "Create category"
+      update: "Update category"
+      category: "Cannot category"
+      word_list: "Word list"
+      confirm_delete: "You sure delete category?"
+      delete: "delete"
+      edit: "Edit category"
   views:
+    login:
+      login: "Log in"
+      notice: "Please log in."
+      email: "Email"
+      password: "Password"
+      new_user: "New user?"
+    categories:
+      title: "Categories"
+      start: "Start"
+    all_categories: "All categories"
     signup:
       signup: "Signup"
       signup_now: "Sign up now!"
@@ -32,14 +60,19 @@ en:
       save_change: "Save change"
       success: "Profile updated"
       error: "Error update"
-  user:
-    account: "Account"
-    profile: "Profile"
-    setting: "Setting"
-    logout: "Logout"
-  layouts:
-    home: "Home"
-    login: "Login"
-    users: "Users"
-    account: "Account"
+    user:
+      account: "Account"
+      profile: "Profile"
+      setting: "Setting"
+      logout: "Logout"
+    layouts:
+      home: "Home"
+      login: "Login"
+      title: "Framgia E-learning system"
+      logo: "E-learning"
+      words: "Words"
+      category: "Category"
+      categories: "Categories"
+      all_users: "Users"
+
 
