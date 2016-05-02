@@ -1,0 +1,14 @@
+<div class = "row">
+  <div class="col-md-12">
+    <div class="col-md-6">
+      <div class="col-md-12 panel panel-default">
+        <h3><%= @category.content %></h3>
+        <p>
+          <%= link_to t("admin.edit"), edit_admin_category_path(@category) %>
+          <%= link_to t("admin.delete"), admin_category_path(@category),
+            method: :delete, data: {confirm: t("admin.category.confirm_delete")} %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
