@@ -1,0 +1,27 @@
+<%= provide :title, t("views.layouts.categories") %>
+  <% @categories.each_with_index do |category, index| %>
+    <div class="row">
+      <div class="col-md-6 category">
+        <ul class="no-decoration">
+          <li>
+            <ul class="list-inline">
+              <li>
+                <h3><strong><%= category.content %></strong></h3>
+              </li>
+              <li>
+                <h5><%= Faker::Lorem.sentences 1  %></h5>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <div class="col-md-12 textbox text-justify">
+              <%= Faker::Lorem.sentences 10 %>
+            </div>
+          </li>
+          <li>
+            <%= link_to t("views.categories.start"),"#" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
