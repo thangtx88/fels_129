@@ -1,0 +1,11 @@
+<fieldset>
+   <%= render "shared/error_messages", object: f.object %>
+  <p>
+    <%= f.label :content, t("admin.words.answer_content") %>
+    <%= f.check_box :is_correct, class: "check-change" %>
+    <%= t "admin.words.correct" %>
+    <%= f.hidden_field :_destroy %>
+    <%= link_to t("admin.words.remove"), "#", class: "remove_fields" %>
+  </p>
+  <%= f.text_field :content, class: "form-control" %><br>
+</fieldset>

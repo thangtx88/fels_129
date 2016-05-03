@@ -25,6 +25,16 @@ class Admin::CategoriesController <ApplicationController
   def edit
   end
 
+  def show
+    if params[:word_id].nil?
+      @word = Word.new
+      4.times{@word.answers.build}
+    else
+      @word = Word.find_by id: params[:word_id]
+    end
+    @words = @category.words.paginate page: params[:page]
+  end
+
   def update
     if @category.update_attributes category_params
       flash[:success] = t "admin.flash.edited_success"
