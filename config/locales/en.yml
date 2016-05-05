@@ -45,6 +45,12 @@ en:
       delete: "delete"
       edit: "Edit category"
   views:
+    lessons:
+      questions: "Questions"
+      lessons: "Lessons"
+      result: "Result"
+      submit: "Submit"
+      correct: "answer(s) correct"
     login:
       login: "Log in"
       notice: "Please log in."

@@ -1,0 +1,25 @@
+<% if @lesson.answers.at(f.index).is_correct %>
+  <% if @lesson.answers.at(f.index).id == answer.id %>
+    <li class="text-success">
+      <%= f.radio_button :answer_id, answer.id, disabled: true %>
+      <%= answer.content %>
+    </li>
+  <% else %>
+    <li>
+      <%= f.radio_button :answer_id, answer.id, disabled: true %>
+      <%= answer.content %>
+    </li>
+  <% end %>
+<% else %>
+  <% if @lesson.answers.at(f.index).id == answer.id %>
+    <li class="text-danger">
+      <%= f.radio_button :answer_id, answer.id, disabled: true %>
+      <%= answer.content %>
+    </li>
+  <% else %>
+    <li>
+      <%= f.radio_button :answer_id, answer.id, disabled: true %>
+      <%= answer.content %>
+    </li>
+  <% end %>
+<% end %>

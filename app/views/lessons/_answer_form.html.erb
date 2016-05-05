@@ -1,0 +1,37 @@
+<h2 class="text-center">
+  <strong><%= t "views.lessons.questions" %></strong>
+  <hr>
+</h2>
+
+<% if @lesson.result.present? %>
+  <h4>
+    <%= "#{@is_correct_answers.count} #{t "views.lessons.correct"}" %>
+  </h4>
+<% end %>
+
+<%= form_for @lesson do |f| %>
+  <%= f.fields_for :results do |builder| %>
+    <ul class="list-unstyled">
+      <li>
+        <%= "#{builder.index + 1}." %>
+        <%= @words.at(builder.index).content %>
+      </li>
+      <ul class="list-unstyled">
+        <% @words.at(builder.index).answers.each do |answer| %>
+          <% if @lesson.result.nil? %>
+            <li>
+              <%= builder.radio_button :answer_id, answer.id %>
+              <%= answer.content %>
+              <%= builder.hidden_field :word_id, value: answer.word.id %>
+            </li>
+          <% else %>
+              <%= render "result", f: builder, answer: answer %>
+          <% end %>
+        <% end %>
+      </ul>
+    </ul>
+  <% end %>
+  <% if @lesson.result.nil? %>
+    <%= f.submit t("views.lessons.submit"), class: "btn btn-default" %>
+  <% end %>
+<% end %>
