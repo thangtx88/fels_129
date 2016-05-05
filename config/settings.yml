@@ -1,0 +1,6 @@
+activities:
+  learned: "Learned"
+option:
+  - learned
+  - unlearned
+  - all

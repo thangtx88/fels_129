@@ -12,7 +12,6 @@ class Lesson < ActiveRecord::Base
     reject_if: proc {|attributes| attributes[:answer_id].blank?},
     allow_destroy: true
 
-
   def question_quantity
     if category.words.size >=5
       self.words = category.words.limit(5)
