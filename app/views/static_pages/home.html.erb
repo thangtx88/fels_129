@@ -1,5 +1,55 @@
-<div class="center jumbotron">
-  <h1><%= t "views.static_pages.welcome"%></h1>
-  <%= link_to t("views.signup.signup_now"),
-  signup_path, class: "btn btn-lg btn-primary"%>
-</div>
+<%= provide :title, t("home") %>
+
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-3">
+      <section class="user_info">
+        <%= link_to avatar_for(current_user, Settings.avatar.height,
+          Settings.avatar.width), current_user %>
+      </section>
+      <section class="name">
+        <p><%= link_to current_user.name, current_user %></p>
+        <p><%= link_to t("user.number_word", word_count: @count),
+          words_path(condition: "learned") %></p>
+      </section>
+    </aside>
+    <div class="col-md-9">
+      <div class="col-md-6 col-md-offset-4">
+        <p>
+          <%= link_to t("word.word_all"), words_path,
+            class: "btn btn-success btn-lg"%>
+          <%= link_to t("categories.lessons"), categories_path,
+            class: "btn btn-warning btn-lg" %>
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="list-group">
+            <li class="list-group-item active"><%= t "user.activities" %></li>
+            <% if @activities.any? %>
+              <%= render @activities %>
+            <% else %>
+              <li class="list-group-item">
+                <h4>
+                  <span class="text-info"><%= t "views.no_activity" %></span>
+                </h4>
+              </li>
+            <% end %>
+          </ul>
+          <%= will_paginate @activities %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div class="row content">
+    <div class="col-md-10 col-md-offset-1 text-center">
+      <div class="jumbotron">
+        <h2><%= t "views.static_pages.welcome" %></h2>
+      </div>
+      <hr>
+      <%= link_to t("views.signup.signup_now"), new_user_path,
+        class: "btn btn-lg btn-primary" %>
+    </div>
+  </div>
+<% end %>

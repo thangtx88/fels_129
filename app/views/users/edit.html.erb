@@ -6,6 +6,13 @@
     <%= form_for @user do |f| %>
       <%= render "shared/error_messages", object: f.object %>
       <p>
+        <%= f.label :avatar %>
+        <div class="photo-preview">
+          <% avatar_for @user, Settings.avatar.height, Settings.avatar.width %>
+        </div>
+        <%= f.file_field :avatar %>
+      </p>
+      <p>
         <%= f.label :name, t("views.signup.name") %>
         <%= f.text_field :name, class: "form-control" %>
       </p>

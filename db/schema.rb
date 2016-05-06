@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20160426061503) do
   create_table "activities", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
     t.string   "action",     limit: 255
-    t.integer  "target_id",  limit: 4
+    t.integer  "lesson_id",  limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end

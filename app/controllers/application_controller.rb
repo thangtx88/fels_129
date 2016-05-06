@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include UsersHelper
 
+  private
   def logged_in_user
     unless logged_in?
       flash[:danger] = t "views.login.notice"
@@ -14,6 +15,18 @@ class ApplicationController < ActionController::Base
     unless current_user.admin?
       flash[:danger] = t "admin.flash.permission"
       redirect_to root_url
+    end
+  end
+
+
+  def show_data_user
+    if logged_in?
+      @categories = Category.all
+      @words = Word.send("by_learned", current_user.id, @categories.map(&:id))
+        .paginate page: params[:page]
+      @count = @words.present? ? @words.count : 0
+      @activities = current_user.activities.order(created_at: :DESC)
+        .paginate page: params[:page], per_page: Settings.per_page
     end
   end
 end

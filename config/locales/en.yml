@@ -4,7 +4,13 @@ en:
   form: "The form contains"
   singup: "Sign up now"
   basetitle: "E-Learning system"
+  word:
+    learned: "learned"
+    word_all: "Words"
   app: "home"
+  users: "Users"
+  user:
+    number_word: "Learned %{word_count} words"
   admin:
     edit: "Edit"
     delete: "Delete"
@@ -45,6 +51,9 @@ en:
       delete: "delete"
       edit: "Edit category"
   views:
+    search_users: "Search users"
+    no_activity: "No activity"
+    no_user: "No user"
     words:
       wordlist: "Word list"
       select_category: "Select a category"
@@ -90,6 +99,7 @@ en:
       email: "Email"
       password: "Password"
       new_user: "New user?"
+      notice: "Please log in."
     update:
       update: "Update"
       save_change: "Save change"
@@ -109,5 +119,6 @@ en:
       category: "Category"
       categories: "Categories"
       all_users: "Users"
+
 
 
