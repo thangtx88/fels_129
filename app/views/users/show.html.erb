@@ -13,7 +13,9 @@
           words_path(condition: t("word.learned")) %></p>
       <% end %>
     </section>
-
+    <section class="stats">
+      <%= render "shared/stats" %>
+    </section>
   </aside>
   <div class="col-md-9">
     <% if current_user?(@user) %>
@@ -25,6 +27,8 @@
             class: "btn btn-warning btn-lg" %>
         </p>
       </div>
+    <% else %>
+      <%= render "follow_form" %><br/>
     <% end %>
     <div class="row">
       <div class="col-md-12">

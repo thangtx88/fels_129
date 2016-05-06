@@ -18,9 +18,24 @@ class User < ActiveRecord::Base
 
   has_secure_password
   mount_uploader :avatar, AvatarUploader
-  def User.digest string
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-      BCrypt::Engine.cost
-    BCrypt::Password.create string, cost: cost
+
+  class << self
+    def digest string
+      cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+        BCrypt::Engine.cost
+      BCrypt::Password.create string, cost: cost
+    end
+  end
+
+  def follow other_user
+    active_relationships.create followed_id: other_user.id
+  end
+
+  def unfollow other_user
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
+
+  def following? other_user
+    following.include? other_user
   end
 end
