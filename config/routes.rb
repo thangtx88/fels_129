@@ -5,10 +5,13 @@ Rails.application.routes.draw do
   get    "login"   => "sessions#new"
   post   "login"   => "sessions#create"
   delete "logout"  => "sessions#destroy"
+
   resources :users
   resources :categories, only: [:index, :new, :create]
   resources :lessons, except: [:index, :destroy, :edit]
   resources :words, only: :index
+  resources :sessions, only: [:new, :create]
+
   namespace :admin do
     root "categories#index"
     resources :users

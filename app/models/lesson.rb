@@ -1,4 +1,8 @@
 class Lesson < ActiveRecord::Base
+
+  include CreateActivity
+
+  after_create :save_activity
   belongs_to :user
   belongs_to :category
   before_create :question_quantity
@@ -18,5 +22,10 @@ class Lesson < ActiveRecord::Base
     else
       self.words = category.words
     end
+  end
+
+  private
+  def save_activity
+    create_activity user_id, id, Settings.activities.learned
   end
 end

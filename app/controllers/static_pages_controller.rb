@@ -1,4 +1,3 @@
 class StaticPagesController < ApplicationController
-  def home
-  end
+ before_action  :show_data_user
 end

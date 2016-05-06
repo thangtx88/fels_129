@@ -1,0 +1,9 @@
+<li class="list-group-item">
+  <h4>
+    <% if activity.lesson.present? && activity.lesson.category.present? %>
+      <%= activity.action + " #{Settings.QUESTION_PER_LESSON} words
+        - #{activity.lesson.category.content}" %>
+        ( <%= activity.created_at.to_date %> )
+    <% end %>
+  </h4>
+</li>
