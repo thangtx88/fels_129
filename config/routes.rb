@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users
   resources :categories, only: [:index, :new, :create]
   resources :lessons, except: [:index, :destroy, :edit]
+  resources :words, only: :index
   namespace :admin do
     root "categories#index"
     resources :users

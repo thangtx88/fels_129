@@ -45,6 +45,16 @@ en:
       delete: "delete"
       edit: "Edit category"
   views:
+    words:
+      wordlist: "Word list"
+      select_category: "Select a category"
+      learned: "Learned"
+      unlearned: "Unlearned"
+      all: "All"
+      filter: "Filter"
+      count: "Count: "
+      word_title: "Words"
+      word_answer_title: "Answers"
     lessons:
       questions: "Questions"
       lessons: "Lessons"
