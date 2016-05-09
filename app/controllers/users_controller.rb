@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update]
   before_action :logged_in_user, except: [:new, :create]
-  before_action  :show_data_user, only: [:show]
 
   def new
     @user = User.new
@@ -30,6 +29,10 @@ class UsersController < ApplicationController
       flash[:danger] = t "views.update.error"
       render :edit
     end
+  end
+
+  def show
+    show_data_user(@user) if logged_in?
   end
 
   def edit

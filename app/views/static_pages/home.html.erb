@@ -12,7 +12,9 @@
         <p><%= link_to t("user.number_word", word_count: @count),
           words_path(condition: "learned") %></p>
       </section>
-
+      <section class="stats">
+        <%= render "shared/stats" %>
+      </section>
     </aside>
     <div class="col-md-9">
       <div class="col-md-6 col-md-offset-4">

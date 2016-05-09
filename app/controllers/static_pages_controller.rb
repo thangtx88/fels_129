@@ -1,3 +1,5 @@
 class StaticPagesController < ApplicationController
- before_action  :show_data_user
+ def home
+    show_data_user(current_user) if logged_in?
+  end
 end

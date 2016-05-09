@@ -7,6 +7,11 @@ class Admin::UsersController < ApplicationController
   def edit
   end
 
+  def index
+    @users = User.paginate page: params[:page],
+      per_page: Settings.users.per_page
+  end
+
   def update
     if @user.update_attributes user_params
       flash[:success] = t "views.update.success"
@@ -18,7 +23,7 @@ class Admin::UsersController < ApplicationController
   end
 
   def destroy
-    if @user.destroyed
+    if @user.destroy
       flash[:success] = t "admin.flash.deleted_success"
     else
       flash[:danger] = t "admin.flash.deleted_fails"
