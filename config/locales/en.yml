@@ -54,6 +54,11 @@ en:
     search_users: "Search users"
     no_activity: "No activity"
     no_user: "No user"
+    follow:
+      follow: "Follow"
+      unfollow: "Unfollow"
+      following: "Following"
+      followers: "Followers"
     words:
       wordlist: "Word list"
       select_category: "Select a category"

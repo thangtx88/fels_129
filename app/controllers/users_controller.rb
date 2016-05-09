@@ -2,8 +2,14 @@ class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update]
   before_action :logged_in_user, except: [:new, :create]
   before_action  :show_data_user, only: [:show]
+
   def new
     @user = User.new
+  end
+
+  def index
+    @users = User.paginate page: params[:page],
+      per_page: Settings.users.per_page
   end
 
   def create
@@ -28,7 +34,6 @@ class UsersController < ApplicationController
 
   def edit
   end
-
 
   private
   def user_params

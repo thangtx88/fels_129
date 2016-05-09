@@ -6,11 +6,16 @@ Rails.application.routes.draw do
   post   "login"   => "sessions#create"
   delete "logout"  => "sessions#destroy"
 
-  resources :users
   resources :categories, only: [:index, :new, :create]
   resources :lessons, except: [:index, :destroy, :edit]
   resources :words, only: :index
   resources :sessions, only: [:new, :create]
+  resources :relationships, only: [:index, :create, :destroy]
+
+  resources :users do
+    get "/:relationship" => "relationships#index", as: :relationship,
+      constraints: {relationship: /(following|followers)/}
+  end
 
   namespace :admin do
     root "categories#index"
