@@ -115,6 +115,8 @@ en:
       profile: "Profile"
       setting: "Setting"
       logout: "Logout"
+      confirm: "Are you sure?"
+      delete: "delete"
     layouts:
       home: "Home"
       login: "Login"
