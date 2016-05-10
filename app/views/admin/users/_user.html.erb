@@ -3,8 +3,8 @@
     <%= link_to avatar_for(user, Settings.avatar.height,
       Settings.avatar.width), user %>
     <%= link_to user.name, user %>
-    <% unless current_user?user %>
-      | <%= link_to t("admin.edit"), edit_admin_user_path(user) %>
+    <% if current_user.admin? %>
+      | <%= link_to t("admin.edit"), edit_user_registration_path(user) %>
       | <%= link_to t("admin.delete"), admin_user_path(user),
         method: :delete, data: {confirm: t("views.user.confirm")} %>
     <% end %>

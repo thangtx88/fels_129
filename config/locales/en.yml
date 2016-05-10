@@ -1,4 +1,16 @@
 en:
+  devise:
+    password:
+      updated: "Update Password"
+      leave: "leave blank if you don't want to change it"
+      Currentpassword: "we need your current password to confirm your changes"
+      unhappy: "unhappy?"
+      confirmation: "Currently waiting confirmation for"
+      charactersminimum: "characters minimum"
+      Changepassword: "Change your password"
+      Forgotpassword: "Forgot your password?"
+      confirmation: "Resend confirmation instructions"
+      unlock: "Resend unlock instructions"
   error: "Error"
   home: "Home"
   form: "The form contains"
