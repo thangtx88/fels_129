@@ -1,6 +1,6 @@
 <%= provide :title, t("home") %>
 
-<% if logged_in? %>
+<% if user_signed_in? %>
   <div class="row">
     <aside class="col-md-3">
       <section class="user_info">
@@ -51,8 +51,8 @@
         <h2><%= t "views.static_pages.welcome" %></h2>
       </div>
       <hr>
-      <%= link_to t("views.signup.signup_now"), new_user_path,
-        class: "btn btn-lg btn-primary" %>
+      <%= link_to t("views.signup.signup_now"),
+        new_user_session_path, class: "btn btn-lg btn-primary" %>
     </div>
   </div>
 <% end %>

@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    show_data_user(@user) if logged_in?
+    show_data_user(@user) if user_signed_in?
   end
 
   def edit
