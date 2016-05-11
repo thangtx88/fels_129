@@ -2,6 +2,7 @@ class LessonsController < ApplicationController
   before_action :logged_in_user
   before_action :load_lesson, only: [:update, :show]
 
+
   def create
     lesson = current_user.lessons.build category_id: params[:category_id]
     lesson.save
@@ -21,8 +22,8 @@ class LessonsController < ApplicationController
   end
 
   def show
-    if @lesson.result.nil?
-      @words = @lesson.words
+     if @lesson.result.nil?
+      @words = @lesson.category.words.shuffle
     else
       @words = @lesson.words
       @is_correct_answers = Answer.send :is_correct_answers, @lesson.id
