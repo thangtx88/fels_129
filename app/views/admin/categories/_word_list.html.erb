@@ -10,8 +10,10 @@
         </div>
         <div class="col-md-6">
           <p>
+          <% if can? :edit, Word %>
             <%= link_to t("admin.words.edit"),
               admin_category_path(@category, word_id: word.id) %>
+            <% end %>
           </p>
         </div>
       <% end %>

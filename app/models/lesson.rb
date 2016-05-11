@@ -17,8 +17,8 @@ class Lesson < ActiveRecord::Base
     allow_destroy: true
 
   def question_quantity
-    if category.words.size >=5
-      self.words = category.words.limit(5)
+    if category.words.size >= Settings.QUESTION_PER_LESSON
+      self.words = category.words.limit(Settings.QUESTION_PER_LESSON)
     else
       self.words = category.words
     end

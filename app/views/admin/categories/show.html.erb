@@ -4,9 +4,13 @@
       <div class="col-md-12 panel panel-default">
         <h3><%= @category.content %></h3>
         <p>
+        <% if can? :edit, Category %>
           <%= link_to t("admin.edit"), edit_admin_category_path(@category) %>
+        <% end %>
+        <% if can? :delete, Category %>
           <%= link_to t("admin.delete"), admin_category_path(@category),
             method: :delete, data: {confirm: t("admin.category.confirm_delete")} %>
+        <% end %>
         </p>
       </div>
       <%= render "word_list" %>
