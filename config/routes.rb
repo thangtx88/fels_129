@@ -18,4 +18,8 @@ Rails.application.routes.draw do
     resources :categories
     resources :words, only: [:update, :destroy, :create]
   end
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 end

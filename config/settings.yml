@@ -23,3 +23,4 @@ option:
   - unlearned
   - all
 relationships: ["followers", "following"]
+email_subject: "You have new result"

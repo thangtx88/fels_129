@@ -21,6 +21,11 @@ gem "bootstrap-will_paginate", "0.0.10"
 gem "config"
 gem "devise"
 gem "cancancan"
+gem "sidekiq"
+gem "whenever", require: false
+gem "delayed_job_active_record"
+gem "daemons"
+gem "letter_opener_web"
 
 group :development, :test do
     gem "byebug"
