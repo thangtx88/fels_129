@@ -22,13 +22,13 @@ class LessonsController < ApplicationController
   end
 
   def show
-     if @lesson.result.nil?
+    if @lesson.result.nil?
       @words = @lesson.category.words.shuffle
     else
       @words = @lesson.words
       @is_correct_answers = Answer.send :is_correct_answers, @lesson.id
+      UserResultMailer.delay(run_at: 8.hours.from_now).send_result(@lesson.user_id)
     end
-
   end
 
   private
