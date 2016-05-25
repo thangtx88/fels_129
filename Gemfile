@@ -28,8 +28,11 @@ gem "daemons"
 gem "letter_opener_web"
 
 group :development, :test do
-    gem "byebug"
-    gem "sqlite3"
+  gem "byebug"
+  gem "sqlite3"
+  gem "rspec-rails", "~> 3.0.0"
+  gem "simplecov", require: false
+  gem "factory_girl_rails"
 end
 
 group :development do
